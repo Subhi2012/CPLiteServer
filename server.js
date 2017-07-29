@@ -4,6 +4,7 @@ var helmet = require('helmet')
 var process = require('process');
 var replace = require("replace");
 var fs = require('fs');
+var nodemailer = require('nodemailer');
 var net = require('net');
 var S = require('string');
 var io = require('socket.io');
@@ -493,6 +494,31 @@ var seperateLine = "++++++++++++++";
 
 app.post('/process', function(req, res, next){
   console.log('Someone just gave feedback!');
+
+var transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: 'email@gmail.com', // You need to turn on: Accept apps with lower security
+    pass: 'password'
+  }
+});
+
+var mailOptions = {
+  from: 'email@gmail.com',
+  to: req.body.email,
+  subject: 'CPLiteServer feedback',
+  text: 'Thank you for giving feedback!'
+};
+
+
+transporter.sendMail(mailOptions, function(error, info){
+  if (error) {
+    console.log(error);
+  } else {
+    console.log('Email sent: ' + info.response);
+  }
+});
+
   res.redirect(303, '/thankyou');
     fs.appendFile('./contactdata/contactdata.txt',
     	seperateLine + breakLine + datetime + breakLine + 'CSRF: ' + req.body._csrf + breakLine + 'Email: ' + req.body.email + breakLine + 'Question: ' + req.body.ques + breakLine + 'Experience: ' + req.body.optradio + breakLine + seperateLine, function(err){
@@ -501,6 +527,7 @@ app.post('/process', function(req, res, next){
       };
     });
   });
+
 
 app.use(function(req,res){
     res.status(404);

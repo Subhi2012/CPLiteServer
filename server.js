@@ -86,10 +86,7 @@ console.log('x           BYE APACHE!             x');
 console.log('x                                   x');
 console.log('x+++++++++++++++++++++++++++++++++++x');
 console.log(datetime);
-console.log('Your crossdomain.xml is set to your WWW url (Thank me later)');
 console.log('Preinstalled with the ICE CPPS Theme made by: AmusingThrone');
-console.log('I do not own anything from the theme');
-console.log('Creating your own SWFs is now supported, but commented out');
 if(S(WWW).latinise().s) {
 		console.log('[*] WWW checked');
 };

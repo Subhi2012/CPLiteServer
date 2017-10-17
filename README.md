@@ -1,5 +1,8 @@
 Credits of Kitsune go to the original maker. I only edited it on parts to make it functional with CPLiteServer.
 
+**NOTICE: THIS KITSUNE IS OLD. USE ![THIS ONE](https://github.com/Zaseth/KITSUNE-MODIFIED "THIS ONE")**
+
+
 ##
 
 Changelog:
@@ -29,12 +32,6 @@ Just replace the play folder in /public/play/
 (P.S, I am not a wizard. So you can manually edit this mediaserver. Please use the Load.swf that is in /public/play/
 
 ![alt text](http://i.imgur.com/UwSTleT.png "CPLiteServer")
-
-
-![alt text](http://i.imgur.com/EJEqZVw.png "CPLiteServer")
-
-Second logo by: M!SH
-
 
 ![alt text](http://i.imgur.com/ykvXA73.png "CPLiteServer")
 
